@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
+
+$title-font: "Italiana", sans-serif;
+
+@mixin title-font($weight) {
+  font-family: $title-font;
+  font-weight: $weight;
+}
