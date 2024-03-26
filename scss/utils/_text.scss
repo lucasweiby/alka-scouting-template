@@ -2,7 +2,42 @@
 
 $title-font: "Italiana", sans-serif;
 
-@mixin title-font($weight) {
+$sizes: (
+  1: calc(0.125rem / 2),
+  2: 0.125rem,
+  4: 0.25rem,
+  8: 0.5rem,
+  16: 1rem,
+  32: 2rem,
+  64: 4rem,
+  128: 8rem,
+  256: 16rem,
+  512: 32rem,
+);
+
+@mixin title-font($weight, $letter-spacing: 0, $color: #fff) {
   font-family: $title-font;
   font-weight: $weight;
+  letter-spacing: $letter-spacing;
+  color: $color;
+}
+
+.alka {
+  &-title {
+    @include title-font(600, 0, var(--alka-dark-100));
+    margin: 0;
+    line-height: 1;
+
+    &-light {
+      @include title-font(600, 0, var(--alka-light-100));
+      margin: 0;
+      line-height: 1;
+    }
+  }
+
+  @each $name, $size in $sizes {
+    &-font-size-#{$name} {
+      font-size: $size;
+    }
+  }
 }

@@ -1,0 +1,21 @@
+.alka-bio {
+  width: 100vw;
+  height: 100vh;
+  @include flexSettings(row, center, center);
+
+  &-gif {
+    height: 32px;
+    margin-left: 0.5rem;
+  }
+
+  &-desc {
+    width: 70%;
+  }
+
+  &-founder {
+    width: 30%;
+    height: 100%;
+    text-align: right;
+    @include flexSettings(column, end, center);
+  }
+}

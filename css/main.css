@@ -182,6 +182,65 @@
   color: rgba(0, 0, 0, 0.1);
 }
 
+.alka-title {
+  font-family: "Italiana", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--alka-dark-100);
+  margin: 0;
+  line-height: 1;
+}
+.alka-title-light {
+  font-family: "Italiana", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--alka-light-100);
+  margin: 0;
+  line-height: 1;
+}
+.alka-font-size-1 {
+  font-size: 0.0625rem;
+}
+.alka-font-size-2 {
+  font-size: 0.125rem;
+}
+.alka-font-size-4 {
+  font-size: 0.25rem;
+}
+.alka-font-size-8 {
+  font-size: 0.5rem;
+}
+.alka-font-size-16 {
+  font-size: 1rem;
+}
+.alka-font-size-32 {
+  font-size: 2rem;
+}
+.alka-font-size-64 {
+  font-size: 4rem;
+}
+.alka-font-size-128 {
+  font-size: 8rem;
+}
+.alka-font-size-256 {
+  font-size: 16rem;
+}
+.alka-font-size-512 {
+  font-size: 32rem;
+}
+
+.alka-home-bg {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: blur(2px) grayscale(1);
+}
 .alka-home-video {
   width: 100vw;
   height: 100vh;
@@ -246,10 +305,37 @@
 }
 .alka-home-navigation-link {
   text-decoration: none;
-  font-size: 32px;
+  font-size: 24px;
   color: var(--alka-light-100);
   font-family: "Italiana", sans-serif;
   font-weight: 500;
+  letter-spacing: 5px;
+  color: #fff;
+}
+
+.alka-bio {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.alka-bio-gif {
+  height: 32px;
+  margin-left: 0.5rem;
+}
+.alka-bio-desc {
+  width: 70%;
+}
+.alka-bio-founder {
+  width: 30%;
+  height: 100%;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
 }
 
 body,

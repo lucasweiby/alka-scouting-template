@@ -1,0 +1,11 @@
+@mixin flexSettings($direction, $horizontalAlign, $verticalAlign) {
+  display: flex;
+  flex-direction: $direction;
+  @if ($direction == "column") {
+    justify-content: $verticalAlign;
+    align-items: $horizontalAlign;
+  } @else {
+    justify-content: $horizontalAlign;
+    align-items: $verticalAlign;
+  }
+}

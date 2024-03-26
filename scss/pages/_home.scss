@@ -1,5 +1,18 @@
 .alka {
   &-home {
+    &-bg {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      filter: blur(2px) grayscale(1);
+    }
+
     &-video {
       width: 100vw;
       height: 100vh;
@@ -73,9 +86,9 @@
 
       &-link {
         text-decoration: none;
-        font-size: 32px;
+        font-size: 24px;
         color: var(--alka-light-100);
-        @include title-font(500);
+        @include title-font(500, 5px);
       }
     }
   }
