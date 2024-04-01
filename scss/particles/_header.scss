@@ -1,0 +1,47 @@
+.alka {
+  &-header {
+    display: flex;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--alka-light-100);
+    z-index: 9;
+
+    &-logo {
+      width: auto;
+      height: 32px;
+    }
+
+    &-page {
+      @include title-font(600, 1rem, var(--alka-dark-100));
+      margin: 0;
+      @extend .alka-font-size-16;
+    }
+
+    &-menu {
+      @include title-font(600, 0, var(--alka-dark-100));
+      flex-grow: 1;
+      flex-basis: 0;
+      display: flex;
+      justify-content: flex-end;
+      cursor: pointer;
+      filter: invert(1);
+    }
+  }
+
+  &-home {
+    &-link {
+      position: relative;
+      z-index: 10;
+      flex-grow: 1;
+      flex-basis: 0;
+      filter: invert(0);
+      transition: filter 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
+}

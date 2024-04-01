@@ -5,4 +5,29 @@ html {
   padding: 0 !important;
   margin: 0 !important;
   background-color: var(--alka-light-100);
+  position: relative;
+}
+
+.alka {
+  &-loading {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--alka-light-100);
+    position: fixed;
+    z-index: 10;
+
+    img {
+      height: 2rem;
+      width: auto;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &-content {
+    display: none;
+    position: relative;
+  }
 }

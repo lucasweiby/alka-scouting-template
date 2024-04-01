@@ -1,0 +1,82 @@
+.alka {
+  &-menu {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    @include flexSettings(column, start, center);
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-item {
+      position: relative;
+      width: fit-content;
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: var(--alka-light-100);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: rotate(-10deg) translateY(-50%) scaleX(0);
+        transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+      &:hover {
+        &::after {
+          transform: rotate(-10deg) translateY(-50%) scaleX(1);
+        }
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      @include title-font(600, 5px);
+      @extend .alka-font-size-64;
+    }
+
+    &-close {
+      position: absolute;
+      right: 32px;
+      top: 16px;
+      width: 32px;
+      height: 32px;
+      opacity: 0.6;
+      cursor: pointer;
+      transition: opacity 0.2s ease-in-out;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:before,
+      &:after {
+        position: absolute;
+        left: 15px;
+        content: " ";
+        height: 33px;
+        width: 2px;
+        background-color: #fff;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

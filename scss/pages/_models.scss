@@ -1,0 +1,67 @@
+.alka {
+  &-models {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding: 8rem 0;
+
+    &-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    &-item {
+      width: 250px;
+      height: 340px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(1);
+      position: relative;
+      box-sizing: border-box;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+      transform: rotate(0);
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      &::after {
+        content: attr(alka-model-name);
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        @include handwrite-font(500, 2px, var(--alka-dark-100));
+        transform: translate(0, 0);
+        opacity: 0;
+        transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        z-index: 2;
+      }
+
+      &:hover {
+        border-top: 10px solid #fff;
+        border-left: 10px solid #fff;
+        border-right: 10px solid #fff;
+        border-bottom: 64px solid #fff;
+        transform: rotate(2deg);
+        -webkit-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+        box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+
+        &::after {
+          transform: translate(-50%, 40px);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
