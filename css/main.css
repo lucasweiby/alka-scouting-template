@@ -234,14 +234,12 @@
   display: flex;
   width: 100%;
   height: auto;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  background-color: var(--alka-light-100);
-  z-index: 9;
 }
 .alka-header-logo {
   width: auto;
