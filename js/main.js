@@ -7,15 +7,7 @@ $(document).ready(function () {
     $(".alka-home").toggle("fast");
   }, 2000);
 
-  $(".alka-header-menu").on("click", function () {
-    $(".alka-menu").css("transform", "translateX(0)");
-    $(".alka-home-link").css("filter", "invert(1)");
-  });
-
-  $(".alka-menu-close").on("click", function () {
-    $(".alka-menu").css("transform", "translateX(100%)");
-    $(".alka-home-link").css("filter", "invert(0)");
-  });
+  invertColors();
 
   var title = $(document).attr("title");
 
@@ -34,7 +26,32 @@ $(document).ready(function () {
 
   if (compareStrings(title, "models")) {
     $(".alka-header-menu").css("filter", "invert(0)");
-  } else {
-    $(".alka-header-menu").css("filter", "invert(1)");
   }
 });
+
+function invertColors() {
+  var isModelPage;
+
+  if ($(".alka-header-page").attr("alka-model-name") != undefined) {
+    $(".alka-header-menu").css("filter", "invert(0)");
+    $(".alka-header-page").css("filter", "invert(1)");
+    $(".alka-home-link").css("filter", "invert(1)");
+    isModelPage = true;
+  } else {
+    $(".alka-header-menu").css("filter", "invert(1)");
+    $(".alka-header-page").css("filter", "invert(0)");
+    $(".alka-home-link").css("filter", "invert(0)");
+    isModelPage = false;
+  }
+
+  $(".alka-header-menu").on("click", function () {
+    $(".alka-menu").css("transform", "translateX(0)");
+    $(".alka-home-link").css("filter", "invert(1)");
+  });
+
+  $(".alka-menu-close").on("click", function () {
+    $(".alka-menu").css("transform", "translateX(100%)");
+    $(".alka-home-link").css("filter", isModelPage ? "invert(1)" : "invert(0)");
+    isModelPage = false;
+  });
+}

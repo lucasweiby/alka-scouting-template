@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Barcode+39&family=Single+Day&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 $title-font: "Italiana", sans-serif;
 $handwrite-font: "Patrick Hand", cursive;
+$cursive-font: "Single Day", cursive;
+$monospace-font: "Space Mono", monospace;
+$barcode: "Libre Barcode 39", system-ui;
+$serif: "Abril Fatface", serif;
 
 $sizes: (
   1: calc(0.125rem / 2),
@@ -48,5 +53,26 @@ $sizes: (
     &-font-size-#{$name} {
       font-size: $size;
     }
+  }
+}
+
+@keyframes fontChange {
+  0% {
+    font-family: $title-font;
+  }
+  20% {
+    font-family: $handwrite-font;
+  }
+  40% {
+    font-family: $monospace-font;
+  }
+  60% {
+    font-family: $barcode;
+  }
+  80% {
+    font-family: $cursive-font;
+  }
+  100% {
+    font-family: $serif;
   }
 }
