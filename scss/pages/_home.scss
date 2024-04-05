@@ -50,13 +50,13 @@
 
       &-logo {
         width: auto;
-        height: 180px;
+        height: 128px;
       }
 
       &-list {
         display: flex;
         list-style: none;
-        width: 40%;
+        width: 50%;
         margin: 4rem 0 0;
         padding: 0;
         background-color: transparent;
@@ -90,7 +90,7 @@
         text-decoration: none;
         font-size: 24px;
         color: var(--alka-light-100);
-        @include title-font(500, 5px);
+        @include title-font(600, 5px);
       }
     }
   }

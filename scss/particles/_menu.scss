@@ -5,7 +5,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9;
+    z-index: 1;
     @include flexSettings(column, start, center);
     padding: 2rem;
     transform: translateX(100%);
@@ -49,12 +49,13 @@
     &-close {
       position: absolute;
       right: 32px;
-      top: 16px;
+      top: 32px;
       width: 32px;
       height: 32px;
       opacity: 0.6;
       cursor: pointer;
       transition: opacity 0.2s ease-in-out;
+      z-index: 10;
 
       &:hover {
         opacity: 1;
