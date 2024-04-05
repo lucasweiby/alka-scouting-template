@@ -419,7 +419,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   bottom: 0;
   z-index: 0;
-  filter: blur(5px) grayscale(1);
+  filter: blur(2px) grayscale(1);
 }
 .alka-home-filter {
   width: 100vw;
@@ -495,6 +495,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 .alka-bio-desc {
   width: 70%;
+}
+.alka-bio-info-contact {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--alka-dark-100);
+}
+.alka-bio-info-contact a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--alka-dark-100);
+  position: relative;
+}
+.alka-bio-info-contact a::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: var(--alka-dark-100);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.alka-bio-info-contact a:hover::after {
+  transform: scale(1);
 }
 .alka-bio-founder {
   width: 30%;
