@@ -1,6 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Barcode+39&family=Single+Day&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Italiana", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--alka-dark-100);
+  margin: 0;
+  line-height: 1;
+}
+
 .alka-title {
   font-family: "Italiana", sans-serif;
   font-weight: 600;
@@ -255,12 +264,14 @@
   display: flex;
   width: 100%;
   height: auto;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+  z-index: 1;
+  mix-blend-mode: difference;
 }
 .alka-header-logo {
   width: auto;
@@ -270,7 +281,7 @@
   font-family: "Italiana", sans-serif;
   font-weight: 600;
   letter-spacing: 1rem;
-  color: var(--alka-dark-100);
+  color: var(--alka-light-100);
   margin: 0;
   z-index: 1;
   position: relative;
@@ -289,13 +300,12 @@
   font-family: "Italiana", sans-serif;
   font-weight: 600;
   letter-spacing: 5px;
-  color: var(--alka-dark-100);
+  color: var(--alka-light-100);
   flex-grow: 1;
   flex-basis: 0;
   display: flex;
   justify-content: flex-end;
   cursor: pointer;
-  filter: invert(1);
 }
 .alka-header-menu:hover {
   animation-name: fontChange;
@@ -307,7 +317,6 @@
   z-index: 10;
   flex-grow: 1;
   flex-basis: 0;
-  filter: invert(0);
   transition: filter 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -317,7 +326,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -359,12 +368,13 @@
 .alka-menu-close {
   position: absolute;
   right: 32px;
-  top: 16px;
+  top: 32px;
   width: 32px;
   height: 32px;
   opacity: 0.6;
   cursor: pointer;
   transition: opacity 0.2s ease-in-out;
+  z-index: 10;
 }
 .alka-menu-close:hover {
   opacity: 1;
@@ -500,17 +510,18 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  align-items: start;
-  justify-content: center;
-  padding: 8rem 0;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8rem 2rem;
 }
 .alka-models-list {
   list-style: none;
   margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  padding: 1rem 0;
+  display: flex;
+  flex-flow: row;
+  overflow-x: auto;
+  gap: 2rem;
 }
 .alka-models-item {
   width: 250px;
@@ -527,6 +538,7 @@
   border-bottom: none;
   transform: rotate(0);
   cursor: pointer;
+  flex-shrink: 0;
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .alka-models-item::after {
@@ -561,11 +573,19 @@
 }
 
 .alka-model-profile {
+  display: flex;
   width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.alka-model-profile-cover {
+  width: 100vw;
   height: 100vh;
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 0;
+  flex-shrink: 0;
 }
 .alka-model-profile-pic {
   background-size: cover;
@@ -573,6 +593,17 @@
   background-position: center;
   filter: grayscale(1);
   position: relative;
+}
+.alka-model-profile-pic::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgb(255, 255, 255) 70%, rgb(0, 0, 0) 100%);
+  mix-blend-mode: multiply;
 }
 .alka-model-profile-pic::after {
   content: attr(alka-model-name);
@@ -615,6 +646,26 @@
   font-style: italic;
   display: inline-block;
   width: 4rem;
+}
+.alka-model-links {
+  font-family: "Space Mono", monospace;
+  text-align: right;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+.alka-model-links a {
+  text-decoration: none;
+  color: var(--alka-dark-100);
+  font-weight: 600;
+}
+.alka-model-links a:not(:first-child) {
+  margin-top: 1rem;
+}
+.alka-model-book {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
 }
 
 body,

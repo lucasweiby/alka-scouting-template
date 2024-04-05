@@ -30,28 +30,46 @@ $(document).ready(function () {
 });
 
 function invertColors() {
-  var isModelPage;
+  // var isModelPage;
 
-  if ($(".alka-header-page").attr("alka-model-name") != undefined) {
-    $(".alka-header-menu").css("filter", "invert(0)");
-    $(".alka-header-page").css("filter", "invert(1)");
-    $(".alka-home-link").css("filter", "invert(1)");
-    isModelPage = true;
-  } else {
-    $(".alka-header-menu").css("filter", "invert(1)");
-    $(".alka-header-page").css("filter", "invert(0)");
-    $(".alka-home-link").css("filter", "invert(0)");
-    isModelPage = false;
-  }
+  // if ($(".alka-header-page").attr("alka-model-name") != undefined) {
+  //   $(".alka-header-menu").css("filter", "invert(0)");
+  //   $(".alka-header-page").css("filter", "invert(1)");
+  //   $(".alka-home-link").css("filter", "invert(1)");
+  //   isModelPage = true;
+  // } else {
+  //   $(".alka-header-menu").css("filter", "invert(1)");
+  //   $(".alka-header-page").css("filter", "invert(0)");
+  //   $(".alka-home-link").css("filter", "invert(0)");
+  //   isModelPage = false;
+  // }
 
   $(".alka-header-menu").on("click", function () {
     $(".alka-menu").css("transform", "translateX(0)");
-    $(".alka-home-link").css("filter", "invert(1)");
+
+    var i = setInterval(function () {
+      clearInterval(i);
+
+      $(".alka-header-menu").css("display", "none");
+      $(".alka-header-page").css("display", "none");
+      $(".alka-header").css("width", "auto");
+    }, 100);
+
+    // $(".alka-home-link").css("filter", "invert(1)");
   });
 
   $(".alka-menu-close").on("click", function () {
     $(".alka-menu").css("transform", "translateX(100%)");
-    $(".alka-home-link").css("filter", isModelPage ? "invert(1)" : "invert(0)");
-    isModelPage = false;
+
+    var i = setInterval(function () {
+      clearInterval(i);
+
+      $(".alka-header").css("width", "100%");
+      $(".alka-header-menu").css("display", "flex");
+      $(".alka-header-page").css("display", "inline-block");
+    }, 100);
+
+    // $(".alka-home-link").css("filter", isModelPage ? "invert(1)" : "invert(0)");
+    // isModelPage = false;
   });
 }
