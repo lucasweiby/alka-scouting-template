@@ -45,9 +45,7 @@
       filter: invert(1);
 
       &:hover {
-        animation-name: fontChange;
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
+        @include textAnimation(5s);
       }
     }
   }

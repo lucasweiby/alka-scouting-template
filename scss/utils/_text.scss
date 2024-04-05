@@ -22,18 +22,40 @@ $sizes: (
   512: 32rem,
 );
 
-@mixin title-font($weight, $letter-spacing: 0, $color: #fff) {
-  font-family: $title-font;
+@mixin defaultSettings($weight, $letter-spacing: 0, $color: #fff) {
   font-weight: $weight;
   letter-spacing: $letter-spacing;
   color: $color;
 }
 
+@mixin title-font($weight, $letter-spacing: 0, $color: #fff) {
+  font-family: $title-font;
+  @include defaultSettings($weight, $letter-spacing, $color);
+}
+
 @mixin handwrite-font($weight, $letter-spacing: 0, $color: #fff) {
   font-family: $handwrite-font;
-  font-weight: $weight;
-  letter-spacing: $letter-spacing;
-  color: $color;
+  @include defaultSettings($weight, $letter-spacing, $color);
+}
+
+@mixin cursive-font($weight, $letter-spacing: 0, $color: #fff) {
+  font-family: $cursive-font;
+  @include defaultSettings($weight, $letter-spacing, $color);
+}
+
+@mixin monospace-font($weight, $letter-spacing: 0, $color: #fff) {
+  font-family: $monospace-font;
+  @include defaultSettings($weight, $letter-spacing, $color);
+}
+
+@mixin barcode($weight, $letter-spacing: 0, $color: #fff) {
+  font-family: $barcode;
+  @include defaultSettings($weight, $letter-spacing, $color);
+}
+
+@mixin serif($weight, $letter-spacing: 0, $color: #fff) {
+  font-family: $serif;
+  @include defaultSettings($weight, $letter-spacing, $color);
 }
 
 .alka {
@@ -54,6 +76,12 @@ $sizes: (
       font-size: $size;
     }
   }
+}
+
+@mixin textAnimation($duration: 2s) {
+  animation-name: fontChange;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes fontChange {

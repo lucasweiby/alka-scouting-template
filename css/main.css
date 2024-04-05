@@ -29,10 +29,10 @@
 .alka-font-size-8 {
   font-size: 0.5rem;
 }
-.alka-font-size-16, .alka-header-page::after, .alka-header-page {
+.alka-font-size-16, .alka-model-profile-info-basic, .alka-header-page::after, .alka-header-page {
   font-size: 1rem;
 }
-.alka-font-size-32 {
+.alka-font-size-32, .alka-model-profile-info-basic span {
   font-size: 2rem;
 }
 .alka-font-size-64, .alka-menu-link {
@@ -432,12 +432,12 @@
 }
 .alka-home-navigation-logo {
   width: auto;
-  height: 180px;
+  height: 128px;
 }
 .alka-home-navigation-list {
   display: flex;
   list-style: none;
-  width: 40%;
+  width: 50%;
   margin: 4rem 0 0;
   padding: 0;
   background-color: transparent;
@@ -466,7 +466,7 @@
   font-size: 24px;
   color: var(--alka-light-100);
   font-family: "Italiana", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 5px;
   color: #fff;
 }
@@ -586,6 +586,35 @@
   animation-name: fontChange;
   animation-duration: 5s;
   animation-iteration-count: infinite;
+}
+.alka-model-profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 2rem;
+  text-align: right;
+  font-family: "Space Mono", monospace;
+}
+.alka-model-profile-info-basic {
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.alka-model-profile-info-basic span {
+  font-family: "Libre Barcode 39", system-ui;
+  line-height: normal;
+  font-weight: 500;
+}
+.alka-model-profile-info-measurement {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+.alka-model-profile-info-measurement span {
+  font-style: italic;
+  display: inline-block;
+  width: 4rem;
 }
 
 body,

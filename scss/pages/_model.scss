@@ -26,6 +26,39 @@
           animation-iteration-count: infinite;
         }
       }
+
+      &-info {
+        @include flexSettings(column, flex-end, flex-end);
+        padding: 2rem;
+        text-align: right;
+        font-family: $monospace-font;
+
+        &-basic {
+          @extend .alka-font-size-16;
+          font-weight: 600;
+          margin-bottom: 2rem;
+
+          span {
+            font-family: $barcode;
+            @extend .alka-font-size-32;
+            line-height: normal;
+            font-weight: 500;
+          }
+        }
+
+        &-measurement {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          text-align: right;
+
+          span {
+            font-style: italic;
+            display: inline-block;
+            width: 4rem;
+          }
+        }
+      }
     }
   }
 }
