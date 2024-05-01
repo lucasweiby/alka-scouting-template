@@ -27,7 +27,15 @@ $(document).ready(function () {
   if (compareStrings(title, "models")) {
     $(".alka-header-menu").css("filter", "invert(0)");
   }
+
+  $(document).on('mousemove', function(e) {
+    $('.alka-circularcursor').css({
+      left: e.pageX,
+      top: e.pageY
+    });
+  })
 });
+
 
 function invertColors() {
   // var isModelPage;
@@ -73,3 +81,4 @@ function invertColors() {
     // isModelPage = false;
   });
 }
+

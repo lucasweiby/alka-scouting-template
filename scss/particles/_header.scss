@@ -15,6 +15,10 @@
     &-logo {
       width: auto;
       height: 32px;
+
+      @include mobile {
+        height: 24px;
+      }
     }
 
     &-page {
@@ -23,6 +27,13 @@
       @extend .alka-font-size-16;
       z-index: 1;
       position: relative;
+
+      @include mobile {
+        width: 128px;
+        word-break: break-word;
+        text-align: center;
+        letter-spacing: 0.5rem;
+      }
 
       &::after {
         content: attr(alka-model-name);
@@ -43,10 +54,13 @@
       flex-basis: 0;
       display: flex;
       justify-content: flex-end;
-      cursor: pointer;
-//      filter: invert(1);
+      //      filter: invert(1);
 
       &:hover {
+        @include textAnimation(5s);
+      }
+
+      @include mobile {
         @include textAnimation(5s);
       }
     }
@@ -58,8 +72,9 @@
       z-index: 10;
       flex-grow: 1;
       flex-basis: 0;
-//      filter: invert(0);
+      //      filter: invert(0);
       transition: filter 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      cursor: none;
     }
   }
 }
