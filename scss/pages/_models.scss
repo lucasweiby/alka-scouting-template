@@ -3,20 +3,27 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
     padding: 8rem 2rem;
+
+    @include mobile {
+      overflow-y: scroll;
+      padding: 6rem 2rem 4rem;
+    }
 
     &-list {
       list-style: none;
       margin: 0;
       padding: 1rem 0;
-      display: flex;
-      flex-flow: row;
-      overflow-x: auto;
-      // display: grid;
-      // grid-template-columns: repeat(4, 1fr);
-       gap: 2rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
     }
 
     &-item {
@@ -33,9 +40,22 @@
       border-right: none;
       border-bottom: none;
       transform: rotate(0);
-      cursor: pointer;
       flex-shrink: 0;
       transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      @include mobile {
+        border-top: 10px solid #fff;
+        border-left: 10px solid #fff;
+        border-right: 10px solid #fff;
+        border-bottom: 64px solid #fff;
+        -webkit-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+        box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+      }
 
       &::after {
         content: attr(alka-model-name);
@@ -49,21 +69,28 @@
         opacity: 0;
         transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
         z-index: 2;
-      }
 
-      &:hover {
-        border-top: 10px solid #fff;
-        border-left: 10px solid #fff;
-        border-right: 10px solid #fff;
-        border-bottom: 64px solid #fff;
-        transform: rotate(2deg);
-        -webkit-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
-        -moz-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
-        box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
-
-        &::after {
+        @include mobile {
           transform: translate(-50%, 40px);
           opacity: 1;
+        }
+      }
+
+      @include desktop {
+        &:hover {
+          border-top: 10px solid #fff;
+          border-left: 10px solid #fff;
+          border-right: 10px solid #fff;
+          border-bottom: 64px solid #fff;
+          transform: rotate(2deg);
+          -webkit-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+          -moz-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+
+          &::after {
+            transform: translate(-50%, 40px);
+            opacity: 1;
+          }
         }
       }
     }

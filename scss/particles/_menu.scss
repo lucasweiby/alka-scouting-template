@@ -15,11 +15,23 @@
       list-style: none;
       margin: 0;
       padding: 0;
+
+      @include mobile {
+        @include flexSettings(column, center, center);
+        align-self: center;
+      }
     }
 
     &-item {
       position: relative;
       width: fit-content;
+
+      @include mobile {
+        text-align: center;
+        &:not(:first-child) {
+          margin-top: 2rem;
+        }
+      }
 
       &::after {
         content: "";
@@ -44,6 +56,11 @@
       text-decoration: none;
       @include title-font(600, 5px);
       @extend .alka-font-size-64;
+      cursor: none;
+
+      @include mobile {
+        font-size: 2rem;
+      }
     }
 
     &-close {
@@ -53,7 +70,6 @@
       width: 32px;
       height: 32px;
       opacity: 0.6;
-      cursor: pointer;
       transition: opacity 0.2s ease-in-out;
       z-index: 10;
 

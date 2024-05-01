@@ -277,6 +277,11 @@ h1, h2, h3, h4, h5, h6 {
   width: auto;
   height: 32px;
 }
+@media only screen and (max-width: 600px) {
+  .alka-header-logo {
+    height: 24px;
+  }
+}
 .alka-header-page {
   font-family: "Italiana", sans-serif;
   font-weight: 600;
@@ -285,6 +290,14 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   z-index: 1;
   position: relative;
+}
+@media only screen and (max-width: 600px) {
+  .alka-header-page {
+    width: 128px;
+    word-break: break-word;
+    text-align: center;
+    letter-spacing: 0.5rem;
+  }
 }
 .alka-header-page::after {
   content: attr(alka-model-name);
@@ -305,12 +318,18 @@ h1, h2, h3, h4, h5, h6 {
   flex-basis: 0;
   display: flex;
   justify-content: flex-end;
-  cursor: pointer;
 }
 .alka-header-menu:hover {
   animation-name: fontChange;
   animation-duration: 2s;
   animation-iteration-count: infinite;
+}
+@media only screen and (max-width: 600px) {
+  .alka-header-menu {
+    animation-name: fontChange;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
 }
 .alka-home-link {
   position: relative;
@@ -318,6 +337,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-grow: 1;
   flex-basis: 0;
   transition: filter 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: none;
 }
 
 .alka-menu {
@@ -340,9 +360,26 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
 }
+@media only screen and (max-width: 600px) {
+  .alka-menu-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+}
 .alka-menu-item {
   position: relative;
   width: fit-content;
+}
+@media only screen and (max-width: 600px) {
+  .alka-menu-item {
+    text-align: center;
+  }
+  .alka-menu-item:not(:first-child) {
+    margin-top: 2rem;
+  }
 }
 .alka-menu-item::after {
   content: "";
@@ -364,6 +401,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   letter-spacing: 5px;
   color: #fff;
+  cursor: none;
+}
+@media only screen and (max-width: 600px) {
+  .alka-menu-link {
+    font-size: 2rem;
+  }
 }
 .alka-menu-close {
   position: absolute;
@@ -372,7 +415,6 @@ h1, h2, h3, h4, h5, h6 {
   width: 32px;
   height: 32px;
   opacity: 0.6;
-  cursor: pointer;
   transition: opacity 0.2s ease-in-out;
   z-index: 10;
 }
@@ -396,68 +438,133 @@ h1, h2, h3, h4, h5, h6 {
 
 .alka-home {
   height: 100vh;
+  background-color: var(--alka-dark-100);
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 0;
+  align-items: flex-start;
+  position: relative;
 }
-.alka-home-bg {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 0;
-  filter: blur(2px) grayscale(1);
+@media only screen and (max-width: 600px) {
+  .alka-home {
+    grid-template-columns: 1fr;
+  }
 }
-.alka-home-video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 0;
-  filter: blur(2px) grayscale(1);
+.alka-home-img {
+  background-image: url("../assets/img/bg-home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(1);
+  animation: photo-animation 30s linear infinite;
+  animation-fill-mode: forwards;
 }
-.alka-home-filter {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 1;
-  background-color: var(--alka-dark-70);
+@media only screen and (max-width: 600px) {
+  .alka-home-img {
+    display: none;
+  }
 }
 .alka-home-navigation {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-start;
   flex-direction: column;
-  z-index: 1;
+  padding: 4rem;
 }
-.alka-home-navigation-logo {
+@media only screen and (max-width: 600px) {
+  .alka-home-navigation {
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.alka-home-navigation svg {
   width: auto;
   height: 128px;
 }
+@media only screen and (max-width: 600px) {
+  .alka-home-navigation svg {
+    height: 80px;
+  }
+}
+.alka-home-navigation-logo {
+  fill: none;
+  stroke: var(--alka-light-100);
+  stroke-width: 1px;
+  stroke-dasharray: 1353px;
+  stroke-dashoffset: 1353px;
+  animation: move 30s linear infinite;
+  animation-fill-mode: forwards;
+}
 .alka-home-navigation-list {
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
   list-style: none;
-  width: 50%;
   margin: 4rem 0 0;
   padding: 0;
   background-color: transparent;
-  justify-content: space-between;
+  position: relative;
+}
+@media only screen and (max-width: 600px) {
+  .alka-home-navigation-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.alka-home-navigation-list::after {
+  content: "";
+  width: 140%;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  top: -2rem;
+  left: -4rem;
+  z-index: 1;
+}
+@media only screen and (max-width: 600px) {
+  .alka-home-navigation-list::after {
+    width: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .alka-home-navigation-item {
   position: relative;
   width: auto;
 }
-.alka-home-navigation-item::after {
+.alka-home-navigation-item:not(:first-child) {
+  margin-left: 6rem;
+}
+@media only screen and (max-width: 600px) {
+  .alka-home-navigation-item:not(:first-child) {
+    margin: 2rem 0 0;
+  }
+}
+.alka-home-navigation-link {
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--alka-light-100);
+  position: relative;
+  cursor: none;
+  font-family: "Italiana", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1rem;
+  color: #fff;
+}
+@media only screen and (max-width: 600px) {
+  .alka-home-navigation-link {
+    letter-spacing: 0.5rem;
+    font-size: 1.5rem;
+  }
+}
+.alka-home-navigation-link::after {
   content: "";
   width: 100%;
   height: 2px;
@@ -468,19 +575,43 @@ h1, h2, h3, h4, h5, h6 {
   transform: rotate(-10deg) translateY(-50%) scaleX(0);
   transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.alka-home-navigation-item:hover::after {
+.alka-home-navigation-link:hover::after {
   transform: rotate(-10deg) translateY(-50%) scaleX(1);
 }
-.alka-home-navigation-link {
-  text-decoration: none;
-  font-size: 24px;
-  color: var(--alka-light-100);
-  font-family: "Italiana", sans-serif;
-  font-weight: 600;
-  letter-spacing: 5px;
-  color: #fff;
-}
 
+@keyframes move {
+  95% {
+    stroke-dashoffset: 1353px;
+  }
+  90% {
+    fill: rgba(255, 255, 255, 0);
+    stroke-dashoffset: 0;
+  }
+  89% {
+    fill: white;
+  }
+  11% {
+    fill: white;
+  }
+  10% {
+    fill: rgba(255, 255, 255, 0);
+    stroke-dashoffset: 0;
+  }
+  0% {
+    fill: rgba(255, 255, 255, 0);
+  }
+}
+@keyframes photo-animation {
+  100% {
+    background-size: auto 100%;
+  }
+  50% {
+    background-size: auto 120%;
+  }
+  0% {
+    background-size: auto 100%;
+  }
+}
 .alka-bio {
   width: 100%;
   height: 100vh;
@@ -489,12 +620,54 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width: 600px) {
+  .alka-bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll;
+  }
+}
 .alka-bio-gif {
   height: 32px;
   margin-left: 0.5rem;
 }
+.alka-bio-title {
+  width: 50%;
+}
+@media only screen and (max-width: 600px) {
+  .alka-bio-title {
+    width: 100%;
+    font-size: 4rem !important;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: calc(1920px - 1px)) {
+  .alka-bio-title {
+    width: 80%;
+  }
+}
 .alka-bio-desc {
   width: 70%;
+}
+@media only screen and (max-width: 600px) {
+  .alka-bio-desc {
+    width: 100%;
+    margin-top: 4rem;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: calc(1920px - 1px)) {
+  .alka-bio-desc {
+    margin-top: 2rem;
+  }
+}
+.alka-bio-info {
+  width: 50%;
+}
+@media only screen and (max-width: 600px) {
+  .alka-bio-info {
+    width: calc(100% - 0.5rem);
+  }
 }
 .alka-bio-info-contact {
   margin-top: 4rem;
@@ -538,23 +711,47 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: end;
 }
+@media only screen and (max-width: 600px) {
+  .alka-bio-founder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    text-align: left;
+  }
+}
+.alka-bio-founder h1 {
+  margin-bottom: 2rem;
+}
 
 .alka-models {
   width: 100%;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
   padding: 8rem 2rem;
+}
+@media only screen and (max-width: 600px) {
+  .alka-models {
+    overflow-y: scroll;
+    padding: 6rem 2rem 4rem;
+  }
 }
 .alka-models-list {
   list-style: none;
   margin: 0;
   padding: 1rem 0;
-  display: flex;
-  flex-flow: row;
-  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+}
+@media only screen and (max-width: 600px) {
+  .alka-models-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 }
 .alka-models-item {
   width: 250px;
@@ -570,9 +767,22 @@ h1, h2, h3, h4, h5, h6 {
   border-right: none;
   border-bottom: none;
   transform: rotate(0);
-  cursor: pointer;
   flex-shrink: 0;
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@media only screen and (max-width: 600px) {
+  .alka-models-item {
+    border-top: 10px solid #fff;
+    border-left: 10px solid #fff;
+    border-right: 10px solid #fff;
+    border-bottom: 64px solid #fff;
+    -webkit-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+  }
+  .alka-models-item:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 }
 .alka-models-item::after {
   content: attr(alka-model-name);
@@ -590,27 +800,42 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   z-index: 2;
 }
-.alka-models-item:hover {
-  border-top: 10px solid #fff;
-  border-left: 10px solid #fff;
-  border-right: 10px solid #fff;
-  border-bottom: 64px solid #fff;
-  transform: rotate(2deg);
-  -webkit-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
-  box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+@media only screen and (max-width: 600px) {
+  .alka-models-item::after {
+    transform: translate(-50%, 40px);
+    opacity: 1;
+  }
 }
-.alka-models-item:hover::after {
-  transform: translate(-50%, 40px);
-  opacity: 1;
+@media only screen and (min-width: 1200px) and (max-width: calc(1920px - 1px)) {
+  .alka-models-item:hover {
+    border-top: 10px solid #fff;
+    border-left: 10px solid #fff;
+    border-right: 10px solid #fff;
+    border-bottom: 64px solid #fff;
+    transform: rotate(2deg);
+    -webkit-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 17px -2px rgba(0, 0, 0, 0.5);
+  }
+  .alka-models-item:hover::after {
+    transform: translate(-50%, 40px);
+    opacity: 1;
+  }
 }
 
 .alka-model-profile {
   display: flex;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   scroll-behavior: smooth;
+}
+@media only screen and (max-width: 600px) {
+  .alka-model-profile {
+    overflow-y: scroll;
+    flex-direction: column;
+  }
 }
 .alka-model-profile-cover {
   width: 100vw;
@@ -620,12 +845,22 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0;
   flex-shrink: 0;
 }
+@media only screen and (max-width: 600px) {
+  .alka-model-profile-cover {
+    grid-template-columns: 1fr;
+  }
+}
 .alka-model-profile-pic {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   filter: grayscale(1);
   position: relative;
+}
+@media only screen and (max-width: 600px) {
+  .alka-model-profile-pic {
+    height: 70vh;
+  }
 }
 .alka-model-profile-pic::before {
   content: "";
@@ -651,6 +886,13 @@ h1, h2, h3, h4, h5, h6 {
   animation-duration: 5s;
   animation-iteration-count: infinite;
 }
+@media only screen and (max-width: 600px) {
+  .alka-model-profile-pic::after {
+    font-size: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 .alka-model-profile-info {
   display: flex;
   flex-direction: column;
@@ -660,25 +902,57 @@ h1, h2, h3, h4, h5, h6 {
   text-align: right;
   font-family: "Space Mono", monospace;
 }
+@media only screen and (max-width: 600px) {
+  .alka-model-profile-info {
+    height: 30vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .alka-model-profile-info-basic {
   font-weight: 600;
   margin-bottom: 2rem;
+}
+@media only screen and (max-width: 600px) {
+  .alka-model-profile-info-basic {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 1rem;
+  }
+  .alka-model-profile-info-basic br {
+    display: none;
+  }
 }
 .alka-model-profile-info-basic span {
   font-family: "Libre Barcode 39", system-ui;
   line-height: normal;
   font-weight: 500;
 }
+@media only screen and (max-width: 600px) {
+  .alka-model-profile-info-basic span {
+    display: none;
+  }
+}
 .alka-model-profile-info-measurement {
   list-style: none;
   margin: 0;
   padding: 0;
   text-align: right;
+  font-size: 14px;
 }
 .alka-model-profile-info-measurement span {
   font-style: italic;
   display: inline-block;
   width: 4rem;
+}
+@media only screen and (max-width: 600px) {
+  .alka-model-profile-info-measurement-item {
+    display: flex;
+    flex-shrink: 0;
+  }
 }
 .alka-model-links {
   font-family: "Space Mono", monospace;
@@ -686,6 +960,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 4rem;
   display: flex;
   flex-direction: column;
+  cursor: none;
+}
+@media only screen and (max-width: 600px) {
+  .alka-model-links {
+    display: none;
+  }
 }
 .alka-model-links a {
   text-decoration: none;
@@ -700,6 +980,53 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   flex-shrink: 0;
 }
+@media only screen and (max-width: 600px) {
+  .alka-model-book {
+    flex-shrink: 1;
+    height: auto;
+    padding: 2rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .alka-model-book-title {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: calc(1920px - 1px)) {
+  .desktop-only {
+    display: block;
+  }
+  .mobile-only {
+    display: none;
+  }
+}
+.alka-circularcursor {
+  background-color: #fff;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  position: absolute;
+  z-index: 100;
+  mix-blend-mode: difference;
+}
+@media only screen and (max-width: 600px) {
+  .alka-circularcursor {
+    display: none;
+  }
+}
 
 body,
 html {
@@ -707,6 +1034,8 @@ html {
   margin: 0 !important;
   background-color: var(--alka-light-100);
   position: relative;
+  cursor: none;
+  overflow: hidden;
 }
 
 .alka-loading {

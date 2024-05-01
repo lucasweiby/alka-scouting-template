@@ -3,16 +3,49 @@
   height: 100vh;
   @include flexSettings(row, center, center);
 
+  @include mobile {
+    @include flexSettings(column, center, flex-start);
+    overflow-y: scroll;
+  }
+
   &-gif {
     height: 32px;
     margin-left: 0.5rem;
   }
 
+  &-title {
+    width: 50%;
+
+    @include mobile {
+      width: 100%;
+      font-size: 4rem !important;
+    }
+
+    @include desktop {
+      width: 80%;
+    }
+  }
+
   &-desc {
     width: 70%;
+
+    @include mobile {
+      width: 100%;
+      margin-top: 4rem;
+    }
+
+    @include desktop {
+      margin-top: 2rem;
+    }
   }
 
   &-info {
+    width: 50%;
+
+    @include mobile {
+      width: calc(100% - 0.5rem);
+    }
+
     &-contact {
       margin-top: 4rem;
       @include flexSettings(column, flex-start, flex-start);
@@ -52,5 +85,15 @@
     height: 100%;
     text-align: right;
     @include flexSettings(column, end, center);
+
+    @include mobile {
+      @include flexSettings(column, start, center);
+      width: 100%;
+      text-align: left;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+    }
   }
 }
