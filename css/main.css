@@ -1,7 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Barcode+39&family=Single+Day&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Italiana", sans-serif;
   font-weight: 600;
   letter-spacing: 0;
@@ -724,6 +729,37 @@ h1, h2, h3, h4, h5, h6 {
 .alka-bio-founder h1 {
   margin-bottom: 2rem;
 }
+.alka-bio-founder-pic {
+  width: 60%;
+  margin-bottom: 1rem;
+}
+.alka-bio-founder-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: "Space Mono", monospace;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: #fff;
+}
+.alka-bio-founder-info-name {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.alka-bio-founder-info-position {
+  font-style: italic;
+}
+.alka-bio-founder-info-location {
+  color: var(--alka-light-70);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.alka-bio-founder-info a {
+  text-decoration: none;
+  color: var(--alka-light-100);
+  margin-top: 1rem;
+}
 
 .alka-models {
   width: 100%;
@@ -1036,6 +1072,10 @@ html {
   position: relative;
   cursor: none;
   overflow: hidden;
+}
+
+a {
+  cursor: none !important;
 }
 
 .alka-loading {

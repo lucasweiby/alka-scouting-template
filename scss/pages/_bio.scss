@@ -95,5 +95,39 @@
     h1 {
       margin-bottom: 2rem;
     }
+
+    &-pic {
+      width: 60%;
+      margin-bottom: 1rem;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      @include monospace-font(500);
+
+      &-name {
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      &-position {
+        font-style: italic;
+      }
+
+      &-location {
+        color: var(--alka-light-70);
+        font-weight: 400;
+        font-size: 0.8rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--alka-light-100);
+        margin-top: 1rem;
+      }
+    }
   }
 }

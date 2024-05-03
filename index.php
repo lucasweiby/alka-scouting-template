@@ -27,8 +27,6 @@
     </section>
 </body>
 
-<footer>
-    <?php require 'config/scripts.php' ?>
-</footer>
+<?php get_footer(); ?>
 
 </html>
