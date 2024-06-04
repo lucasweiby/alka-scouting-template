@@ -5,13 +5,18 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     @include flexSettings(column, start, center);
     padding: 2rem;
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-    &-list {
+    .menu-menu-principal-container {
+      width: 100%;
+    }
+
+    &-list,
+    ul {
       list-style: none;
       margin: 0;
       padding: 0;
@@ -22,7 +27,8 @@
       }
     }
 
-    &-item {
+    &-item,
+    li {
       position: relative;
       width: fit-content;
 
@@ -52,7 +58,8 @@
       }
     }
 
-    &-link {
+    &-link,
+    a {
       text-decoration: none;
       @include title-font(600, 5px);
       @extend .alka-font-size-64;

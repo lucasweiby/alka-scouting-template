@@ -19,7 +19,7 @@
         <div class="alka-bio">
             <div class="alka-bio-desc p-4">
                 <!-- <img class="alka-bio-gif" src="https://media.tenor.com/nEoz_3Q6_1YAAAAi/hourglass-time.gif" alt="Hourglass gif"> -->
-                <h1 class="alka-title alka-bio-title alka-font-size-128 mb-4">About us</h1>
+                <h1 class="alka-title alka-bio-title mb-4">About us</h1>
                 <div class="alka-bio-info ms-2">
                     <?php while(have_posts()): the_post(); ?>
                     <?php the_content(); ?>

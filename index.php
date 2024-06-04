@@ -2,16 +2,21 @@
 <html lang="en">
 
 <!-- HEAD -->
-<?php require 'config/head.php' ?>
+
+<?php
+    /**
+     * Template Name: HOME
+     */
+    require 'config/head.php';
+    include 'particles/load.php';
+?>
 
 <body>
-    <?php include 'particles/load.php'; ?>
-
     <section class="alka-home" style="display: none;">
         <div class="alka-home-navigation">
             <?php require 'particles/logo-home.php'; ?>
 
-            <ul class="alka-home-navigation-list">
+            <!-- <ul class="alka-home-navigation-list">
                 <li class="alka-home-navigation-item">
                     <a href="bio.php" class="alka-home-navigation-link">Bio</a>
                 </li>
@@ -21,9 +26,16 @@
                 <li class="alka-home-navigation-item">
                     <a href="be_a_model.php" class="alka-home-navigation-link">Be a Model</a>
                 </li>
-            </ul>
+            </ul> -->
+
+            <?php
+                wp_nav_menu( array(
+                    'theme_location' => 'main_menu'
+                ));
+            ?>
         </div>
-        <div class="alka-home-img"></div>
+        <!--<div class="alka-home-img"></div>-->
+
     </section>
 </body>
 

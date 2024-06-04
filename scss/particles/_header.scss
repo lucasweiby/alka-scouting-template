@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-    z-index: 1;
+    z-index: 2;
     mix-blend-mode: difference;
 
     &-logo {
@@ -33,6 +33,7 @@
         word-break: break-word;
         text-align: center;
         letter-spacing: 0.5rem;
+        font-size: 0.8rem;
       }
 
       &::after {

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Barcode+39&family=Single+Day&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 $title-font: "Italiana", sans-serif;
 $handwrite-font: "Patrick Hand", cursive;
@@ -8,6 +9,7 @@ $cursive-font: "Single Day", cursive;
 $monospace-font: "Space Mono", monospace;
 $barcode: "Libre Barcode 39", system-ui;
 $serif: "Abril Fatface", serif;
+$text: "Poppins", sans-serif;
 
 $sizes: (
   1: calc(0.125rem / 2),
@@ -55,6 +57,11 @@ $sizes: (
 
 @mixin serif($weight, $letter-spacing: 0, $color: #fff) {
   font-family: $serif;
+  @include defaultSettings($weight, $letter-spacing, $color);
+}
+
+@mixin text-font($weight, $letter-spacing: 0, $color: #fff) {
+  font-family: $text;
   @include defaultSettings($weight, $letter-spacing, $color);
 }
 

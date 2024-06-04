@@ -62,7 +62,8 @@
         animation-fill-mode: forwards;
       }
 
-      &-list {
+      &-list,
+      ul {
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -94,7 +95,8 @@
         }
       }
 
-      &-item {
+      &-item,
+      li {
         position: relative;
         width: auto;
 
@@ -107,7 +109,8 @@
         }
       }
 
-      &-link {
+      &-link,
+      a {
         text-decoration: none;
         font-size: 1rem;
         color: var(--alka-light-100);

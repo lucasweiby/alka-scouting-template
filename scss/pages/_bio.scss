@@ -87,7 +87,7 @@
     @include flexSettings(column, end, center);
 
     @include mobile {
-      @include flexSettings(column, start, center);
+      @include flexSettings(column, center, center);
       width: 100%;
       text-align: left;
     }
@@ -106,27 +106,43 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-end;
-      @include monospace-font(500);
+
+      @include mobile {
+        align-items: center;
+      }
 
       &-name {
         font-weight: 600;
         font-size: 1.2rem;
+        @include title-font(600, 2px);
+        line-height: 1;
       }
 
       &-position {
         font-style: italic;
+        margin: 0;
+        color: #fff;
+        font-weight: 300;
+        font-size: 0.9rem;
       }
 
       &-location {
         color: var(--alka-light-70);
-        font-weight: 400;
+        font-weight: 300;
         font-size: 0.8rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
       }
 
       a {
         text-decoration: none;
         color: var(--alka-light-100);
         margin-top: 1rem;
+
+        @include mobile {
+          font-size: 1.5rem;
+          margin-top: 1rem;
+        }
       }
     }
   }

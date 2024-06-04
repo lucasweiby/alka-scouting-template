@@ -1,6 +1,6 @@
 <div class="alka-header">
     <a href="index.php" class="alka-home-link">
-        <img src="assets/img/light.svg" alt="ALKA SCOUTING" class="alka-header-logo">
+        <img src="<?php bloginfo('template_url') ?>/assets/img/light.svg" alt="ALKA SCOUTING" class="alka-header-logo">
     </a>
 
     <div class="alka-header-page">TITLE</div>

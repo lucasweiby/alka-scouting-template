@@ -4,6 +4,13 @@
 @import "bio";
 @import "models";
 @import "model";
+@import "building";
+@import "be_a_model";
+
+body,
+html {
+  @include text-font(400, 0, var(--alka-dark-100));
+}
 
 .alka-circularcursor {
   background-color: #fff;

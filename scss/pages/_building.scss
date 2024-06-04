@@ -1,0 +1,13 @@
+.alka {
+  &-building {
+    width: 100vw;
+    height: 100vh;
+    @include flexSettings(column, center, center);
+
+    img {
+      width: 3rem;
+      height: 3rem;
+      margin-bottom: 2rem;
+    }
+  }
+}

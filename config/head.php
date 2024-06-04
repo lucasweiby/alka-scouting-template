@@ -6,7 +6,7 @@
 
         <?php
             /* Verifica se estamos em uma página do WordPress */
-            if (is_page()) {
+            if (is_page() || is_single()) {
                 /* Adiciona o título da página à tag <title> */
                 echo ' | ' . get_the_title();
             }
