@@ -36,11 +36,11 @@
         <div class="alka-models">
             <div class="alka-models-navigation">
                 <ul class="alka-models-navigation-tabs">
-                    <li class="alka-models-navigation-tab" onclick="openTab(event, 'models')" id="defaultOpen">
+                    <li class="alka-models-navigation-tab active" onclick="openTab(event, 'models')" id="defaultOpen">
                         ALKA MODELS
                     </li>
                     <li class="alka-models-navigation-tab" onclick="openTab(event, 'development')">
-                        DEVELOPMENT
+                        ALKA NEWS
                     </li>
                 </ul>
             </div>
@@ -60,6 +60,10 @@
                     wp_reset_postdata(); 
                 endif;
                 ?>
+                <li class="alka-models-item last-one">
+                    <img class="alka-models-item-img"
+                        src="<?php bloginfo('template_url') ?>/assets/img/hourglass-time.gif" />
+                </li>
             </ul>
 
             <?php if($development->have_posts()) : ?>
@@ -77,6 +81,10 @@
                         endwhile; 
                         wp_reset_postdata(); 
                     ?>
+                <li class="alka-models-item last-one">
+                    <img class="alka-models-item-img"
+                        src="<?php bloginfo('template_url') ?>/assets/img/hourglass-time.gif" />
+                </li>
             </ul>
             <?php endif; ?>
         </div>

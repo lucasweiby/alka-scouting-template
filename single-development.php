@@ -57,11 +57,11 @@
                         <?php endif; ?>
                         <?php if(get_the_content()): ?>
                         <li class="alka-model-profile-right-side-navigation-tab">
-                            <a href="#portfolio">Shootings</a>
+                            <a href="#portfolio">Development</a>
                         </li>
                         <?php else: ?>
                         <li class="alka-model-profile-right-side-navigation-tab disabled">
-                            <a href="#portfolio" disabled>Shootings</a>
+                            <a href="#portfolio" disabled>Development</a>
                         </li>
                         <?php endif; ?>
                     </ul>
@@ -74,14 +74,13 @@
                     <?php if($hasVideo): ?>
                     <div id="video">
                         <h1>Video</h1>
-                        <video width="624" height="352" controls>
-                            <source src="<?php the_field('video') ?>" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <div class="video-gallery">
+                            <?php echo $hasVideo ?>
+                        </div>
                     </div>
                     <?php endif; ?>
                     <div id="portfolio">
-                        <h1>Shootings</h1>
+                        <h1>Development</h1>
                         <?php the_content(); ?>
                     </div>
                 </div>

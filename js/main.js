@@ -39,6 +39,15 @@ $(document).ready(function () {
   $("#defaultOpen").addClass('active');
 });
 
+// var header = $("#header");
+// $(document).scroll(function(e) {
+//     if($(this).scrollTop() > $("#banner").height()) {
+//         header.css({"position" : "fixed", "top" : "0"});
+//     } else {
+//         header.css("position", "relative");
+//     }
+// });
+
 function openTab(evt, tabName) {
   // Declare all variables
   var i, tabcontent, tablinks;

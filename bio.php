@@ -25,7 +25,7 @@
                     <?php the_content(); ?>
                     <div class="alka-bio-info-contact">
                         <span>
-                            <i>Submissions</i> :
+                            <i>Contact</i> :
                             <a href="mailto:alka@alkascouting.com">
                                 <?php the_field('submissions'); ?>
                             </a>

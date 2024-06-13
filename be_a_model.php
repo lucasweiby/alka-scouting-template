@@ -7,13 +7,35 @@
      * Template Name: BE A MODEL
      */
     require 'config/head.php';
-    require 'particles/load.php';
-    require 'particles/menu.php';
 ?>
 
 <?php get_header(); ?>
 
+<!-- SECURITY MODAL -->
+
 <body class="alka-light-100-bg">
+    <?php
+        require 'particles/load.php';
+        require 'particles/menu.php';
+    ?>
+    <dialog class="alka-security-modal" id="alka-security-modal">
+        <h2>Security Alert</h2>
+
+        <p>This message is important to protect models and aspiring models from online predators.</p>
+        <p>
+            Please do not respond to anyone claiming to be affiliated with ALKA without alerting an adult and verifying
+            their identity first. ALKA Scouting never asks for nude photos or lingerie and does not require any type of
+            cash
+            payment.
+        </p>
+        <p>
+            <b>Please don't hesitate to contact us if something doesn't feel right.</b>
+        </p>
+
+        <button id="closeModal">
+            I understood
+        </button>
+    </dialog>
     <div class="alka-content">
         <div class="alka-beModel">
             <?php while(have_posts()): the_post(); ?>

@@ -19,14 +19,29 @@
             $hasPolas = get_field('polaroids');
             $hasVideo = get_field('video');
             $hasNews = get_field('news');
+
+            $hasCover = get_field('cover');
         ?>
         <div class="alka-model-profile">
             <div class="alka-model-profile-cover" id="cover">
                 <div class="alka-model-profile-pic" alka-model-name="<?php the_title(); ?>"
-                    style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></div>
+                    style="background-image: url('<?php $hasCover != null && $hasCover != '' ? the_field('cover') : the_post_thumbnail_url(); ?>')">
+                </div>
                 <div class="alka-model-profile-info">
                     <div class="alka-model-profile-info-basic">
-                        <span><?php the_title(); ?></span><br />
+                        <?php
+                            function removerAcentos($string) {
+                                // Converte os caracteres com acento para seus equivalentes sem acento
+                                $semAcentos = iconv('UTF-8', 'ASCII//TRANSLIT', $string);
+                                // Remove qualquer caractere especial que possa ter sido gerado pela conversão
+                                $semAcentos = preg_replace('/[^a-zA-Z0-9\s]/', '', $semAcentos);
+                                return $semAcentos;
+                            }
+
+                            $model_name = removerAcentos(get_the_title());
+                        ?>
+
+                        <span><?php echo $model_name ?></span><br />
                         <?php while(have_rows('basic_info')): the_row(); ?>
                         <?php 
                             $gender = get_sub_field("gender");
@@ -95,6 +110,7 @@
                     <?php endwhile; ?>
 
                     <div class="alka-model-profile-info-placement">
+                        <h5>Placed</h5>
                         <?php 
                             while(have_rows('basic_info')): the_row();                            
                                 if(get_sub_field('placement')):
@@ -161,10 +177,9 @@
                 <?php if($hasVideo): ?>
                 <div id="video">
                     <h1 class="alka-model-portfolio-title">Video</h1>
-                    <video width="624" height="352" controls>
-                        <source src="<?php the_field('video') ?>" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <div class="video-gallery">
+                        <?php echo $hasVideo ?>
+                    </div>
                 </div>
                 <?php endif; ?>
                 <?php if($hasNews): ?>

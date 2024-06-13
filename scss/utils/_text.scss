@@ -106,16 +106,13 @@ h6 {
   0% {
     font-family: $title-font;
   }
-  20% {
+  25% {
     font-family: $handwrite-font;
   }
-  40% {
+  50% {
     font-family: $monospace-font;
   }
-  60% {
-    font-family: $barcode;
-  }
-  80% {
+  75% {
     font-family: $cursive-font;
   }
   100% {

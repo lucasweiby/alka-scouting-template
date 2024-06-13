@@ -12,6 +12,54 @@ html {
   @include text-font(400, 0, var(--alka-dark-100));
 }
 
+.alka-security-modal {
+  width: 35%;
+  border: none;
+  padding: 2rem;
+  border-radius: 8px;
+  -webkit-box-shadow: 6px 7px 32px -15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 6px 7px 32px -15px rgba(0, 0, 0, 0.5);
+  box-shadow: 6px 7px 32px -15px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  button {
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  &:focus,
+  &:focus-visible {
+    border: none;
+    outline: none;
+  }
+
+  &::backdrop {
+    background-color: var(--alka-dark-70);
+    pointer-events: none;
+  }
+}
+
 .alka-circularcursor {
   background-color: #fff;
   height: 20px;
@@ -20,8 +68,9 @@ html {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   position: absolute;
-  z-index: 100;
+  z-index: 1001;
   mix-blend-mode: difference;
+  pointer-events: none;
 
   @include mobile {
     display: none;
