@@ -140,13 +140,31 @@
             align-items: center;
             gap: 8px;
 
-            &::after {
+            @include mobile {
+              justify-content: center;
+            }
+
+            &::after,
+            &::before {
               content: "";
               width: 80px;
               height: 1px;
               background-color: var(--alka-dark-100);
               position: relative;
             }
+
+            &::before {
+              display: none;
+
+              @include mobile {
+                display: block;
+              }
+            }
+          }
+
+          img {
+            width: 24px;
+            margin-top: 1rem;
           }
 
           ul {

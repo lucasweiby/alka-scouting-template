@@ -1127,12 +1127,29 @@ h6 {
   align-items: center;
   gap: 8px;
 }
-.alka-model-profile-info-placement h5::after {
+@media only screen and (max-width: 600px) {
+  .alka-model-profile-info-placement h5 {
+    justify-content: center;
+  }
+}
+.alka-model-profile-info-placement h5::after, .alka-model-profile-info-placement h5::before {
   content: "";
   width: 80px;
   height: 1px;
   background-color: var(--alka-dark-100);
   position: relative;
+}
+.alka-model-profile-info-placement h5::before {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  .alka-model-profile-info-placement h5::before {
+    display: block;
+  }
+}
+.alka-model-profile-info-placement img {
+  width: 24px;
+  margin-top: 1rem;
 }
 .alka-model-profile-info-placement ul {
   list-style: none;

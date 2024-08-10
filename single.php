@@ -115,8 +115,12 @@
                             while(have_rows('basic_info')): the_row();                            
                                 if(get_sub_field('placement')):
                                     the_sub_field('placement');
+                                else:
+                        ?>
+                        <img src="<?php bloginfo('template_url') ?>/assets/img/hourglass-time.gif" />
+                        <?php
                                 endif;
-                            endwhile;
+                                endwhile;
                         ?>
                     </div>
 
